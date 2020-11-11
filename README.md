@@ -30,7 +30,7 @@ alamat http://semeruyyy.pw/index.php/home. Karena dirasa alamat urlnya kurang ba
 - (10) Web http://penanjakan.semeruyyy.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot 
 pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur folder sebagai berikut:
 
-<p align="center"><img width="auto" alt="Screen Shot 2020-10-17 at 00 26 27" src="https://user-images.githubusercontent.com/61299072/98775025-d8367b00-241e-11eb-99ad-dc311a339319.PNG"></p>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98775025-d8367b00-241e-11eb-99ad-dc311a339319.PNG"></p>
 
 - (11) Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan. 
 - (12) Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache. 
@@ -51,7 +51,7 @@ yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
 Sebelum mengerjakan soal No.1 ikuti langkah-langkah yang ada pada modul UML.
 ### No. 1
 ------------------------
-**Membuat domain dengan alamat http://semeruyyy.pw.** 
+**Membuat domain dengan alamat http://semerua04.pw** 
 - Langkah pertama adalah buka UML Malang dan ketikkan:
 ```
 nano /etc/bind/named/conf/local
@@ -64,7 +64,7 @@ zone "semerua04.pw" {
         file "/etc/bind/jarkom/semerua04.pw";
 };
 ```
-<p align="center"><img width="auto" alt="Screen Shot 2020-10-17 at 00 26 27" src="https://user-images.githubusercontent.com/61299072/98776468-8cd19c00-2421-11eb-8da2-5b761aea4444.png"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98776468-8cd19c00-2421-11eb-8da2-5b761aea4444.png"></p><br>
 
 - Buat folder **jarkom** didalam `/etc/bind`
 ```
@@ -74,4 +74,58 @@ mkdir /etc/bind/jarkom
 ```
 cp /etc/bind/db.local /etc/bind/jarkom/semerua04.pw
 ```
--  Kemudian 
+- Lalu buka file **semerua04.pw** dan edit dengan menggunakan IP PROBOLINGGO sebagai berikut
+```
+nano /etc/bind/jarkom/jarkom2020.com
+```
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98785853-d3c68e00-242f-11eb-9a53-fe94c9099ca0.PNG"></p><br>
+- Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
+```
+service bind9 restart
+```
+### No. 2
+----------------------------
+**Membuat alias domain dengan alamat http://www.semerua04.pw**
+Kemudian untuk membuat alias, dapat dilakukan dengan cara menggunakan CNAME dan edit file **semerua04.pw** seperti gambar berikut
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98786005-0bcdd100-2430-11eb-9d44-347772b38bf9.PNG"></p><br>
+Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
+```
+service bind9 restart
+```
+
+### No. 3
+--------------------------
+**Membuat subdomain pada MALANG yanng mengarah ke IP Server PROBOLINGGO dengan nama http://penanjakan.semerua04.pw**
+Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98784988-80077500-242e-11eb-891f-3e29657890e5.png"></p><br>
+Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
+```
+service bind9 restart
+```
+
+### No. 4
+-------------------------
+**Membuat reverse DNS**
+- Edit file `/etc/bind/named.conf.local` pada MALANG dengan cara sebagai berikut
+```
+nano /etc/bind/named.conf.local
+```
+- Lalu tambahkan konfigurasi sebagai berikut
+```
+zone "73.151.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/jarkom/73.151.10.in-addr.arpa";
+};
+```
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98788306-44bb7500-2433-11eb-9ece-0d18631ca609.png"></p><br>
+
+- Copykan file db.local pada path `/etc/bind` ke dalam folder jarkom yang baru saja dibuat dan ubah namanya menjadi `73.151.10.in-addr.arpa` dengan cara sebagai berikut
+```
+cp /etc/bind/db.local /etc/bind/jarkom/73.151.10.in-addr.arpa
+```
+
+- Setelah itu edit file `73.151.10.in-addr.arpa` dengan mengetikkan `nano /etc/bind/jarkom/73.151.10.in-addr.arpa` seperti berikut
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98788764-ecd13e00-2433-11eb-9bf7-255255f2f83d.png"></p><br>
+
+
+
