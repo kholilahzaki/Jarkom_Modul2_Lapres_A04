@@ -84,6 +84,7 @@ nano /etc/bind/jarkom/jarkom2020.com
 ### No. 2
 ----------------------------
 **Membuat alias domain dengan alamat http://www.semerua04.pw**
+
 Kemudian untuk membuat alias, dapat dilakukan dengan cara menggunakan CNAME dan edit file **semerua04.pw** seperti gambar berikut
 <p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98786005-0bcdd100-2430-11eb-9d44-347772b38bf9.PNG"></p><br>
 Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate  
@@ -91,6 +92,7 @@ Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate
 ### No. 3
 --------------------------
 **Membuat subdomain pada MALANG yanng mengarah ke IP Server PROBOLINGGO dengan nama http://penanjakan.semerua04.pw**
+
 Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98784988-80077500-242e-11eb-891f-3e29657890e5.png"></p><br>
 Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
@@ -129,7 +131,7 @@ cp /etc/bind/db.local /etc/bind/jarkom/73.151.10.in-addr.arpa
 - Pertama ubah konfigurasi file `/etc/bind/named.conf.local` pada server MALANG dengan syntax berikut
 
 ```
-zone "jarkom2020.com" {
+zone "semerua04.pw" {
     type master;
     notify yes;
     also-notify { 10.151.73.43; }; //IP MOJOKERTO
@@ -144,7 +146,7 @@ zone "jarkom2020.com" {
 
 ### No. 6
 ------------------------
-**Membuat subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.**
+**Membuat subdomain dengan alamat http://gunung.semerua04.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.**
 
 - Pada MALANG, edit file **/etc/bind/jarkom/semerua04.pw** seperti dibawah ini
 
