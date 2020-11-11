@@ -194,5 +194,5 @@ cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
 
 Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut. Setelah disimpan, lalu 
 service bind9 restart dan lakukan testing pada klien
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98797349-03c95d80-243f-11eb-9fd8-8cfd043fa120.png"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98797349-03c95d80-243f-11eb-9fd8-8cfd043fa120.png"></p><br>
 
