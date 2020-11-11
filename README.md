@@ -167,13 +167,12 @@ zone "semerua04.pw" {
 
 - Lalu pada MOJOKERTO edit file `/etc/bind/named.conf.options`
 
-**kurang ss an named.conf.options mojokerto**
 
 - Setelah itu pada MOJOKERTO edit file **/etc/bind/named.conf.local** seperti berikut
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98791728-0d02fc00-2438-11eb-9d1d-2f17cce3ee78.png"></p><br>
 
 - Lalu ketik `mkdir /etc/bind/delegasi` untuk membuat direktori delegasi
-- Lalu copy db.local ke direktori delegasi dan beri nama**gunung.semerua04.pw**
+- Lalu copy db.local ke direktori delegasi dan beri nama **gunung.semerua04.pw**
 
 ```
 cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
