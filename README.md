@@ -64,7 +64,7 @@ zone "semerua04.pw" {
         file "/etc/bind/jarkom/semerua04.pw";
 };
 ```
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98776468-8cd19c00-2421-11eb-8da2-5b761aea4444.png"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98776468-8cd19c00-2421-11eb-8da2-5b761aea4444.png"></p><br>
 
 - Buat folder **jarkom** didalam `/etc/bind`
 ```
@@ -78,30 +78,22 @@ cp /etc/bind/db.local /etc/bind/jarkom/semerua04.pw
 ```
 nano /etc/bind/jarkom/jarkom2020.com
 ```
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98785853-d3c68e00-242f-11eb-9a53-fe94c9099ca0.PNG"></p><br>
-- Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
-```
-service bind9 restart
-```
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98785853-d3c68e00-242f-11eb-9a53-fe94c9099ca0.PNG"></p><br>
+- Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
+
 ### No. 2
 ----------------------------
 **Membuat alias domain dengan alamat http://www.semerua04.pw**
 Kemudian untuk membuat alias, dapat dilakukan dengan cara menggunakan CNAME dan edit file **semerua04.pw** seperti gambar berikut
 <p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98786005-0bcdd100-2430-11eb-9d44-347772b38bf9.PNG"></p><br>
-Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
-```
-service bind9 restart
-```
+Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate  
 
 ### No. 3
 --------------------------
 **Membuat subdomain pada MALANG yanng mengarah ke IP Server PROBOLINGGO dengan nama http://penanjakan.semerua04.pw**
 Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98784988-80077500-242e-11eb-891f-3e29657890e5.png"></p><br>
-Setelah disimpan, lalu ketik sebagai berikut pada uml untuk mengupdate 
-```
-service bind9 restart
-```
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98784988-80077500-242e-11eb-891f-3e29657890e5.png"></p><br>
+Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
 
 ### No. 4
 -------------------------
@@ -110,22 +102,99 @@ service bind9 restart
 ```
 nano /etc/bind/named.conf.local
 ```
+
 - Lalu tambahkan konfigurasi sebagai berikut
+
 ```
 zone "73.151.10.in-addr.arpa" {
     type master;
     file "/etc/bind/jarkom/73.151.10.in-addr.arpa";
 };
 ```
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98788306-44bb7500-2433-11eb-9ece-0d18631ca609.png"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98788306-44bb7500-2433-11eb-9ece-0d18631ca609.png"></p><br>
 
 - Copykan file db.local pada path `/etc/bind` ke dalam folder jarkom yang baru saja dibuat dan ubah namanya menjadi `73.151.10.in-addr.arpa` dengan cara sebagai berikut
+
 ```
 cp /etc/bind/db.local /etc/bind/jarkom/73.151.10.in-addr.arpa
 ```
 
 - Setelah itu edit file `73.151.10.in-addr.arpa` dengan mengetikkan `nano /etc/bind/jarkom/73.151.10.in-addr.arpa` seperti berikut
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98788764-ecd13e00-2433-11eb-9bf7-255255f2f83d.png"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98788764-ecd13e00-2433-11eb-9bf7-255255f2f83d.png"></p><br>
 
+### No. 5
+-------------------------
+**Membuat DNS Server Slave pada MOJOKERTO**
+- Pertama ubah konfigurasi file `/etc/bind/named.conf.local` pada server MALANG dengan syntax berikut
 
+```
+zone "jarkom2020.com" {
+    type master;
+    notify yes;
+    also-notify { 10.151.73.43; }; //IP MOJOKERTO
+    allow-transfer { 10.151.73.43; }; //IP MOJOKERTO
+    file "/etc/bind/jarkom/semerua04.pw";
+};
+```
+
+- Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98789714-3e2dfd00-2435-11eb-9539-0d8b0c072d13.png"></p><br>
+
+**masi kurang buat yang ngubah konfigurasi di mojokerto sama testing**
+
+### No. 6
+------------------------
+**Membuat subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.**
+
+- Pada MALANG, edit file **/etc/bind/jarkom/semerua04.pw** seperti dibawah ini
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98790730-b47f2f00-2436-11eb-8a9d-1b15437063c6.png"></p><br>
+
+- Lalu edit file `/etc/bind/named.conf.options` pada MALANG.
+
+**kurang ss an yang di named.conf.options**
+
+- Kemudian edit file `/etc/bind/named.conf.local` dengan syntax sebagai berikut
+
+```
+zone "semerua04.pw" {
+    type master;
+    file "/etc/bind/jarkom/semerua04.pw";
+    allow-transfer { 10.151.73.43; }; //IP MOJOKERTO
+};
+```
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98791381-9108b400-2437-11eb-9a06-213e5b019619.png"></p><br>
+- Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
+
+- Lalu pada MOJOKERTO edit file `/etc/bind/named.conf.options`
+
+**kurang ss an named.conf.options mojokerto**
+
+- Setelah itu pada MOJOKERTO edit file **/etc/bind/named.conf.local** seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98791728-0d02fc00-2438-11eb-9d1d-2f17cce3ee78.png"></p><br>
+
+- Lalu ketik `mkdir /etc/bind/delegasi` untuk membuat direktori delegasi
+- Lalu copy db.local ke direktori delegasi dan beri nama**gunung.semerua04.pw**
+
+```
+cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
+```
+
+- Lalu edit file gunung.semerua04.pw
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98793131-09707480-243a-11eb-8fca-f859955d4031.png"></p><br>
+
+- Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate
+
+- Testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98794216-5c96f700-243b-11eb-9e58-f750f6ce3d05.png"></p><br>
+
+### No. 7
+---------------------------
+**Membuat subdomain dengan nama http://naik.gunung.semerua04.pw, dan diarahkan ke IP Server PROBOLINGGO**
+Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut. Setelah disimpan, lalu 
+service bind9 restart dan lakukan testing pada klien
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98797349-03c95d80-243f-11eb-9fd8-8cfd043fa120.png"></p><br>
 
