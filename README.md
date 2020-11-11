@@ -142,8 +142,6 @@ zone "jarkom2020.com" {
 
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98789714-3e2dfd00-2435-11eb-9539-0d8b0c072d13.png"></p><br>
 
-**masi kurang buat yang ngubah konfigurasi di mojokerto sama testing**
-
 ### No. 6
 ------------------------
 **Membuat subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.**
@@ -153,8 +151,6 @@ zone "jarkom2020.com" {
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98790730-b47f2f00-2436-11eb-8a9d-1b15437063c6.png"></p><br>
 
 - Lalu edit file `/etc/bind/named.conf.options` pada MALANG.
-
-**kurang ss an yang di named.conf.options**
 
 - Kemudian edit file `/etc/bind/named.conf.local` dengan syntax sebagai berikut
 
