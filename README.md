@@ -144,6 +144,7 @@ zone "semerua04.pw" {
 
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98789714-3e2dfd00-2435-11eb-9539-0d8b0c072d13.png"></p><br>
 
+
 ### No. 6
 ------------------------
 **Membuat subdomain dengan alamat http://gunung.semerua04.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.**
