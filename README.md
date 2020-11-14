@@ -49,6 +49,8 @@ yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
 
 ## Jawaban:
 Sebelum mengerjakan soal No.1 ikuti langkah-langkah yang ada pada modul UML.
+
+- [Jawaban No.1](#No.-1)
 ### No. 1
 ------------------------
 **Membuat domain dengan alamat http://semerua04.pw** 
@@ -216,10 +218,216 @@ cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
 **Membuat subdomain dengan nama http://naik.gunung.semerua04.pw, dan diarahkan ke IP Server PROBOLINGGO**
 
 Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98797349-03c95d80-243f-11eb-9fd8-8cfd043fa120.png"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153996-f9c58a00-26de-11eb-9d4d-6f665fcf72f8.PNG"></p><br>
 
 - Setelah disimpan, lalu service bind9 restart
 
 - Lakukan testing
-<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99153937-8c195e00-26de-11eb-92da-1feb41dbfc5e.PNG"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153937-8c195e00-26de-11eb-92da-1feb41dbfc5e.PNG"></p><br>
+
+### No. 8
+-----------------------
+**Domain http://semerua04.pw memiliki Document Root pada /var/www/semerua04.pw.**
+
+- Masuk ke directory /etc/apache2/sites-available lalu Copy file default menjadi file semerua04.pw pada PROBOLINGGO
+
+- Buka file semerua04.pw
+
+- Tambahkan:
+```
+ServerName semerua04.pw
+ServerAlias www.semerua04.pw
+```
+
+- Lalu edit file semerua04.pw menjadi seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154108-ec5ccf80-26df-11eb-8594-0c916eef79d2.png"></p><br>
+
+- Setelah itu ketik `a2ensite semerua04.pw`
+
+- Lalu service apache2 restart
+
+- Lalu pindah ke direktori /var/www, dan download file pendukung dengan perintah
+```
+wget 10.151.36.202/semeru.pw.zip
+```
+
+- Unzip file tersebut dan ubah namanya menjadi semerua04.pw
+
+- Testing pada browser dan ketikkan http://semerua04.pw
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154200-8d4b8a80-26e0-11eb-9467-c99f9deeeb17.PNG"></p><br>
+
+### No. 9
+--------------------------
+**Mengaktifkan mod rewrite agar urlnya menjadi http://semerua04.pw/home**
+
+- Jalankan perintah `a2enmod rewrite`
+
+- Lalu service apache2 restart
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154306-4c07aa80-26e1-11eb-908a-0bbbe506a207.png"></p><br>
+
+- Masuk ke direktori /var/www/semerua04.pw dan ketikkan `nano .htaccess` dan isi file seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154341-8c672880-26e1-11eb-82bd-1b62207e4144.png"></p><br>
+
+- Lalu pindah ke /etc/apache2/sites-available dan edit file semerua04.pw seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154357-b9b3d680-26e1-11eb-97e6-aabbaa26988b.png"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154369-d8b26880-26e1-11eb-8fdf-dccbfbfa72c1.png"></p><br>
+
+### No. 10
+------------------------
+**Web http://penanjakan.semerua04.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semerua04.pw dan memiliki struktur folder seperti yang diminta**
+
+- Masuk ke direktori /etc/apache2/sites-available pada PROBOLINGGO, dan Copy file default menajdi file penanjakan.semerua04.pw
+
+- Edit file penanjakan.semerua04.pw menjadi 
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154459-8291f500-26e2-11eb-80d4-4687214cdf4a.PNG"></p><br>
+
+- Gunakan perintah `a2ensite penanjakan.semerua04.pw`
+
+- Lalu service apache2 restart
+
+- Masuk ke direktori /var/www, dan download file pendukung dengan perintah
+```
+wget 10.151.36.202/penanjakan.semeru.pw.zip
+```
+
+- Unzip file dan ubah namanya menjadi penanjakan.semerua04.pw
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154557-5f1b7a00-26e3-11eb-92a9-38779aeb3707.PNG"></p><br>
+
+### No. 11
+**Jika membuka /public maka akan muncul list directory, namun file di dalamnya tidak bisa diakses**
+
+- Masuk ke direktori /etc/apache2/sites-available dan buka file penanjakan.semerua04.pw, lalu edit file tersebut dan tambahkan 
+```
+ <Directory /var/www/penanjakan.semerua04.pw/public>
+     Options +Indexes
+ </Directory>
+ <Directory /var/www/penanjakan.semerua04.pw/public/javascripts>
+     Options -Indexes
+ </Directory>
+ <Directory /var/www/penanjakan.semerua04.pw/public/css>
+     Options -Indexes
+ </Directory>
+ <Directory /var/www/penanjakan.semerua04.pw/public/images>
+     Options -Indexes
+ </Directory>
+```
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154835-6cd1ff00-26e5-11eb-9f73-35203fee6ad8.PNG"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154868-a0148e00-26e5-11eb-8e8c-2b25ff7ac469.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154869-a1de5180-26e5-11eb-83d6-ef874a2b638b.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155221-950f2d00-26e8-11eb-87e8-a721a55e55b9.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155219-93de0000-26e8-11eb-841c-c4e4537ee08d.PNG"></p><br>
+
+### No. 12
+-------------------------
+**Mengganti error default dari Apache dengan file 404.html**
+
+- Masuk ke direktori /etc/apache2/sites-available, lalu edit file penanjakan.semerua04.pw seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155423-5ed2ad00-26ea-11eb-8654-c6d5795456e6.PNG"></p><br>
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155447-99d4e080-26ea-11eb-9b40-2a0ed80e2538.PNG"></p><br>
+
+### No. 13
+--------------------------
+**Memperpendek url yang awalnya http://penanjakan.semeruyyy.pw/public/javascripts menjadi http://penanjakan.semeruyyy.pw/js**
+
+- Masuk ke direktori /etc/apache2/sites-available, lalu edit file penanjakan.semerua04.pw dengan menambahkan
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155531-30a19d00-26eb-11eb-8579-d83a37b23e93.png"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155528-2ed7d980-26eb-11eb-833b-3478cde2720f.png"></p><br>
+
+### No. 14
+---------------------------
+**Dapat mengakses http://naik.gunung.semerua04.pw:8888**
+
+- Masuk ke direktori /etc/apache2/sites-available, Copy file default menjadi file naik.gunung.semerua04.pw, dan edit file tersebut menjadi
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155574-b32a5c80-26eb-11eb-9b89-9d86ed0cc14a.PNG"></p><br>
+
+- Lalu pindah ke direktori /etc/apache2 dan edit file ports.conf
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155589-e2d96480-26eb-11eb-8eb6-389c15371d52.PNG"></p><br>
+
+- Jalankan perintah `a2ensite naik.gunung.semerua04.pw`
+
+- Lalu service apache2 restart
+
+- Masuk ke direktori /var/www, dan download file pendukung dengan perintah
+```
+wget 10.151.36.202/naik.gunung.semeru.pw.zip
+```
+
+- Unzip file tersebut
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155649-62673380-26ec-11eb-9410-8def534867f6.PNG"></p><br>
+
+### No. 15
+--------------------------
+**Buat username dan password saat mengakses web**
+
+- Install apache utilities package dengan 
+```
+apt-get update
+apt-get install apache2 apache2-utils
+```
+
+- Lalu buat file password, dan masukkan username dan password
+```
+htpasswd -c /etc/apache2/.htpasswd semeru
+```
+
+- Lalu edit file pada /etc/apache2/sites-enabled/naik.gunung.semerua04.pw seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155725-17015500-26ed-11eb-9285-b3797abfcff8.PNG"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155724-15379180-26ed-11eb-828c-27527f92827f.PNG"></p><br>
+
+### No. 16
+------------------------------
+**Jika membuka IP PROBOLINGGO akan langusng diarahkan ke http://semerua04.pw**
+
+- Masuk ke direktori /var/www dan buat file .htaccess seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155775-94c56080-26ed-11eb-9239-c0c8c29d894c.PNG"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155803-e66deb00-26ed-11eb-88ec-e33525c2174a.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155806-ec63cc00-26ed-11eb-8f75-1a879ecb7980.PNG"></p><br>
+
+### No. 17
+-----------------------
+**Jika membuka semua image yang mengandung kata semeru maka akan dialihkan ke semeru.jpg**
+
+- Masuk ke direktori /var/www/penanjakan.semerua04.pw dan buat file .htaccess seperti berikut
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155856-58decb00-26ee-11eb-93fe-46660fc2f52b.PNG"></p><br>
+
+- Lalu service apache2 restart
+
+- Lakukan testing dengan menginputkan penanjakan.semerua04.pw/public/images/lalalasemeru.jpg 
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155857-59776180-26ee-11eb-9371-5af836a43313.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155854-57150780-26ee-11eb-9051-63bad31d058e.PNG"></p><br>
+
+
+
+
 
