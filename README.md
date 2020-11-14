@@ -140,9 +140,23 @@ zone "semerua04.pw" {
 };
 ```
 
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98789714-3e2dfd00-2435-11eb-9539-0d8b0c072d13.png"></p><br>
+
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98789714-3e2dfd00-2435-11eb-9539-0d8b0c072d13.png"></p><br>
+- Lalu buka file /etc/bind/named.conf.local apad MOJOKERTO dan tambahkan sytax berikut:
+```
+zone "semerua04.pw" {
+        type slave;
+        masters { 10.151.73.42; }; //IP MALANG
+        file "/var/lib/bind/semerua004.pw";
+};
+```
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153297-29be5e80-26da-11eb-9ec3-ae6add6a7e02.PNG"></p><br>
+- Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
+- Ketik `server bind9 stop` pada MALANG untuk testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153325-69854600-26da-11eb-8e1b-932255f62354.PNG"></p><br>
 
 
 ### No. 6
