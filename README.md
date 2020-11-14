@@ -154,9 +154,12 @@ zone "semerua04.pw" {
 ```
 
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153297-29be5e80-26da-11eb-9ec3-ae6add6a7e02.PNG"></p><br>
+
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
+
 - Ketik `server bind9 stop` pada MALANG untuk testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153325-69854600-26da-11eb-8e1b-932255f62354.PNG"></p><br>
+
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99153325-69854600-26da-11eb-8e1b-932255f62354.PNG"></p><br>
 
 
 ### No. 6
@@ -167,19 +170,17 @@ zone "semerua04.pw" {
 
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98790730-b47f2f00-2436-11eb-8a9d-1b15437063c6.png"></p><br>
 
-- Lalu edit file `/etc/bind/named.conf.options` pada MALANG.
-
-- Kemudian edit file `/etc/bind/named.conf.local` dengan syntax sebagai berikut
-
+- Lalu edit file `/etc/bind/named.conf.options` pada MALANG dan tambahkan
 ```
-zone "semerua04.pw" {
-    type master;
-    file "/etc/bind/jarkom/semerua04.pw";
-    allow-transfer { 10.151.73.43; }; //IP MOJOKERTO
-};
+allow-query{any;};
 ```
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98791381-9108b400-2437-11eb-9a06-213e5b019619.png"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153569-d3eab600-26db-11eb-896f-e87e26df51fa.PNG"></p><br>
+
+- Kemudian edit file `/etc/bind/named.conf.local` pada MALANG dengan syntax sebagai berikut
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153666-79058e80-26dc-11eb-8613-6d43d8f8e4b4.PNG"></p><br>
+
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
 
 - Lalu pada MOJOKERTO edit file `/etc/bind/named.conf.options`
