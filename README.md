@@ -210,7 +210,7 @@ cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate
 
 - Testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153902-4a88b300-26de-11eb-950d-6070a0484cdf.png"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99153902-4a88b300-26de-11eb-950d-6070a0484cdf.png"></p><br>
 
 ### No. 7
 ---------------------------
@@ -222,7 +222,7 @@ Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahk
 - Setelah disimpan, lalu service bind9 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153937-8c195e00-26de-11eb-92da-1feb41dbfc5e.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99153937-8c195e00-26de-11eb-92da-1feb41dbfc5e.PNG"></p><br>
 
 ### No. 8
 -----------------------
@@ -253,7 +253,7 @@ wget 10.151.36.202/semeru.pw.zip
 - Unzip file tersebut dan ubah namanya menjadi semerua04.pw
 
 - Testing pada browser dan ketikkan http://semerua04.pw
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154200-8d4b8a80-26e0-11eb-9467-c99f9deeeb17.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99154200-8d4b8a80-26e0-11eb-9467-c99f9deeeb17.PNG"></p><br>
 
 ### No. 9
 --------------------------
@@ -273,7 +273,7 @@ wget 10.151.36.202/semeru.pw.zip
 - Lalu service apache2 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154369-d8b26880-26e1-11eb-8fdf-dccbfbfa72c1.png"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99154369-d8b26880-26e1-11eb-8fdf-dccbfbfa72c1.png"></p><br>
 
 ### No. 10
 ------------------------
@@ -296,7 +296,7 @@ wget 10.151.36.202/penanjakan.semeru.pw.zip
 - Unzip file dan ubah namanya menjadi penanjakan.semerua04.pw
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154557-5f1b7a00-26e3-11eb-92a9-38779aeb3707.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99154557-5f1b7a00-26e3-11eb-92a9-38779aeb3707.PNG"></p><br>
 
 ### No. 11
 **Jika membuka /public maka akan muncul list directory, namun file di dalamnya tidak bisa diakses**
@@ -321,13 +321,13 @@ wget 10.151.36.202/penanjakan.semeru.pw.zip
 - Lalu service apache2 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154868-a0148e00-26e5-11eb-8e8c-2b25ff7ac469.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99154868-a0148e00-26e5-11eb-8e8c-2b25ff7ac469.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99154869-a1de5180-26e5-11eb-83d6-ef874a2b638b.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99154869-a1de5180-26e5-11eb-83d6-ef874a2b638b.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155221-950f2d00-26e8-11eb-87e8-a721a55e55b9.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155221-950f2d00-26e8-11eb-87e8-a721a55e55b9.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155219-93de0000-26e8-11eb-841c-c4e4537ee08d.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155219-93de0000-26e8-11eb-841c-c4e4537ee08d.PNG"></p><br>
 
 ### No. 12
 -------------------------
@@ -337,7 +337,7 @@ wget 10.151.36.202/penanjakan.semeru.pw.zip
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155423-5ed2ad00-26ea-11eb-8654-c6d5795456e6.PNG"></p><br>
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155447-99d4e080-26ea-11eb-9b40-2a0ed80e2538.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155447-99d4e080-26ea-11eb-9b40-2a0ed80e2538.PNG"></p><br>
 
 ### No. 13
 --------------------------
@@ -349,7 +349,7 @@ wget 10.151.36.202/penanjakan.semeru.pw.zip
 - Lalu service apache2 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155528-2ed7d980-26eb-11eb-833b-3478cde2720f.png"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155528-2ed7d980-26eb-11eb-833b-3478cde2720f.png"></p><br>
 
 ### No. 14
 ---------------------------
@@ -373,7 +373,7 @@ wget 10.151.36.202/naik.gunung.semeru.pw.zip
 - Unzip file tersebut
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155649-62673380-26ec-11eb-9410-8def534867f6.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155649-62673380-26ec-11eb-9410-8def534867f6.PNG"></p><br>
 
 ### No. 15
 --------------------------
@@ -396,11 +396,11 @@ htpasswd -c /etc/apache2/.htpasswd semeru
 - Lalu service apache2 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155724-15379180-26ed-11eb-828c-27527f92827f.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155724-15379180-26ed-11eb-828c-27527f92827f.PNG"></p><br>
 
 ### No. 16
 ------------------------------
-**Jika membuka IP PROBOLINGGO akan langusng diarahkan ke http://semerua04.pw**
+**Jika membuka IP PROBOLINGGO akan langsung diarahkan ke http://semerua04.pw**
 
 - Masuk ke direktori /var/www dan buat file .htaccess seperti berikut
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155775-94c56080-26ed-11eb-9239-c0c8c29d894c.PNG"></p><br>
@@ -408,9 +408,9 @@ htpasswd -c /etc/apache2/.htpasswd semeru
 - Lalu service apache2 restart
 
 - Lakukan testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155803-e66deb00-26ed-11eb-88ec-e33525c2174a.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155803-e66deb00-26ed-11eb-88ec-e33525c2174a.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155806-ec63cc00-26ed-11eb-8f75-1a879ecb7980.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155806-ec63cc00-26ed-11eb-8f75-1a879ecb7980.PNG"></p><br>
 
 ### No. 17
 -----------------------
@@ -422,9 +422,9 @@ htpasswd -c /etc/apache2/.htpasswd semeru
 - Lalu service apache2 restart
 
 - Lakukan testing dengan menginputkan penanjakan.semerua04.pw/public/images/lalalasemeru.jpg 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155857-59776180-26ee-11eb-9371-5af836a43313.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155857-59776180-26ee-11eb-9371-5af836a43313.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155959-76f8fb00-26ef-11eb-9630-27a603845498.PNG"></p><br>
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99155959-76f8fb00-26ef-11eb-9630-27a603845498.PNG"></p><br>
 
 
 
