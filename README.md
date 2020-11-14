@@ -51,6 +51,23 @@ yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
 Sebelum mengerjakan soal No.1 ikuti langkah-langkah yang ada pada modul UML.
 
 - [Jawaban No.1](#No.-1)
+- [Jawaban No.2](#No.-2)
+- [Jawaban No.3](#No.-3)
+- [Jawaban No.4](#No.-4)
+- [Jawaban No.5](#No.-5)
+- [Jawaban No.6](#No.-6)
+- [Jawaban No.7](#No.-7)
+- [Jawaban No.8](#No.-8)
+- [Jawaban No.9](#No.-9)
+- [Jawaban No.10](#No.-10)
+- [Jawaban No.11](#No.-11)
+- [Jawaban No.12](#No.-12)
+- [Jawaban No.13](#No.-13)
+- [Jawaban No.14](#No.-14)
+- [Jawaban No.15](#No.-15)
+- [Jawaban No.16](#No.-16)
+- [Jawaban No.17](#No.-17)
+
 ### No. 1
 ------------------------
 **Membuat domain dengan alamat http://semerua04.pw** 
@@ -425,7 +442,7 @@ htpasswd -c /etc/apache2/.htpasswd semeru
 - Lakukan testing dengan menginputkan penanjakan.semerua04.pw/public/images/lalalasemeru.jpg 
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155857-59776180-26ee-11eb-9371-5af836a43313.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155854-57150780-26ee-11eb-9051-63bad31d058e.PNG"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99155959-76f8fb00-26ef-11eb-9630-27a603845498.PNG"></p><br>
 
 
 
