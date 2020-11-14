@@ -183,13 +183,19 @@ allow-query{any;};
 
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate 
 
-- Lalu pada MOJOKERTO edit file `/etc/bind/named.conf.options`
+- Lalu pada MOJOKERTO edit file `/etc/bind/named.conf.options` dan tambahkan
+```
+allow-query{any;};
+```
 
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153841-b28ac980-26dd-11eb-8c64-2b11e3c79be5.PNG"></p><br>
 
-- Setelah itu pada MOJOKERTO edit file **/etc/bind/named.conf.local** seperti berikut
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98791728-0d02fc00-2438-11eb-9d1d-2f17cce3ee78.png"></p><br>
+- Kemudian edit file `/etc/bind/named.conf.local` pada MOJOKERTO seperti berikut
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153871-0695ae00-26de-11eb-8661-0482f050dbce.PNG"></p><br>
 
 - Lalu ketik `mkdir /etc/bind/delegasi` untuk membuat direktori delegasi
+
 - Lalu copy db.local ke direktori delegasi dan beri nama **gunung.semerua04.pw**
 
 ```
@@ -197,18 +203,23 @@ cp /etc/bind/db.local /etc/bind/delegasi/its.jarkom2020.com
 ```
 
 - Lalu edit file gunung.semerua04.pw
+
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98793131-09707480-243a-11eb-8fca-f859955d4031.png"></p><br>
 
 - Setelah disimpan, lalu ketik service bind9 restart pada uml untuk mengupdate
 
 - Testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/98794216-5c96f700-243b-11eb-9e58-f750f6ce3d05.png"></p><br>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/99153902-4a88b300-26de-11eb-950d-6070a0484cdf.png"></p><br>
 
 ### No. 7
 ---------------------------
 **Membuat subdomain dengan nama http://naik.gunung.semerua04.pw, dan diarahkan ke IP Server PROBOLINGGO**
 
-Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut. Setelah disimpan, lalu 
-service bind9 restart dan lakukan testing pada klien
+Untuk pembuatan subdomain edit file `/etc/bind/jarkom/semerua04.pw` lalu tambahkan konfigurasi seperti berikut
 <p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/98797349-03c95d80-243f-11eb-9fd8-8cfd043fa120.png"></p><br>
+
+- Setelah disimpan, lalu service bind9 restart
+
+- Lakukan testing
+<p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/99153937-8c195e00-26de-11eb-92da-1feb41dbfc5e.PNG"></p><br>
 
